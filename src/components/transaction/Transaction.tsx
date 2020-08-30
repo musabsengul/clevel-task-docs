@@ -12,10 +12,12 @@ import "./Transaction.css";
 
 const Transaction: React.FC = () => {
   const [store, setStore] = useState(initialStore);
-  const [total, setTotal] = useState<number>(store.length+1);
-  const [edit, setEdit] = useState(false);
+  const [total, setTotal] = useState<number>(store.length + 1);
   const [current, setCurrent] = useState<any>();
   const [inProp, setInProp] = useState(false);
+  const [modal, setModal] = useState(false);
+
+  const toggle = () => setModal(!modal);
 
   const time: ShowForm = () => {
     setInProp(true)
@@ -23,23 +25,15 @@ const Transaction: React.FC = () => {
   }
   const editIs: Selected = (selected) => {
     setCurrent(selected);
-    openEdit();
+    toggle()
   };
   const handleDelete: Selected = (selected) => {
     time()
     const newStore = store.filter((s) => s.id !== selected.id);
     setStore(newStore);
     setTotal(total - 1);
-    console.log("2");
   };
-  const openEdit: ShowForm = (is = false) => {
-    if (edit === true) {
-      setEdit(false);
-    } else {
-      setEdit(true);
-    }
-    time()
-  };
+
   const addToStore: AddToStore = (
     total,
     name,
@@ -66,14 +60,15 @@ const Transaction: React.FC = () => {
   return (
     <div className="transaction">
       <React.Fragment>
-        <AddTo addToStore={addToStore} total={total} openEdit={openEdit} />
-        {edit ? (
+        <AddTo addToStore={addToStore} total={total} />
+        {modal ? (
           <EditTo
-            openEdit={openEdit}
+            openEdit={toggle}
             addToStore={addToStore}
             total={total}
             current={current}
-            editIs={editIs}
+            modal={modal}
+            toggle={toggle}
           />
         ) : (
             null

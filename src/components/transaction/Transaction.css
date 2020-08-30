@@ -3,16 +3,12 @@
 }
 .table {
   max-width: 1102.5px;
-  max-height: 500px;
+  max-height: 700px;
   overflow-y: scroll;
 }
-
-.show-false {
+.AddTo {
   text-align: right;
-  margin: 25px;
-}
-.show-true {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .save-exit {
   margin-top: 15px;

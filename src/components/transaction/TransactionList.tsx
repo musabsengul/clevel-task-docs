@@ -46,6 +46,4 @@ const TransactionList: React.FC<TransactionProps> = ({ store, handleDelete, edit
         </div>
     )
 }
-
-
 export default TransactionList
