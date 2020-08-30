@@ -1,0 +1,56 @@
+.Transaction {
+  margin-top: 20px;
+}
+.table {
+  max-width: 1102.5px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.show-false {
+  text-align: right;
+  margin: 25px;
+}
+.show-true {
+  margin-bottom: 50px;
+}
+.save-exit {
+  margin-top: 15px;
+}
+.save-exit button i {
+  color: white;
+}
+.show-true input {
+  width: 200px;
+  height: 38px;
+  margin: 5px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.show-true input:focus,
+.show-true input:hover {
+  outline: 0;
+}
+.show-true button {
+  margin-bottom: 5px;
+}
+select {
+  width: 100px;
+  height: 38px;
+  margin: 5px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  transition: opactiy 1s;
+}
