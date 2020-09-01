@@ -43,35 +43,11 @@ const EditTo: React.FC<EditToProps> = ({ current, addToStore, total, openEdit, m
             alert("Eksik yer kaldı")
         } else {
             addToStore(id, name, description, date, amount, currency)
-            setAmount("")
-            setName("")
-            setDescription("")
-            setCurrency("")
-            setDate("")
             openEdit()
         }
     }
     return (
         <div className="show-true ml-3">
-            {/* <Row>
-                <form>
-                    <input type="text" placeholder={cur.name} value={name} onChange={handleChangeName} />
-                    <input type="textarea" placeholder={cur.description} value={description} onChange={handleChangeDescription} />
-                    <input type="date" placeholder={cur.date} value={date} onChange={handleChangeDate} />
-                    <input type="number" placeholder={cur.amount} value={amount} onChange={handleChangeAmount} />
-                    <select name="currency" value={currency} onChange={handleChangeCurrency} >
-                        <option>TRY</option>
-                        <option>EUR</option>
-                        <option>USD</option>
-                    </select>
-                </form>
-            </Row>
-            <Row>
-                <div className="save-exit">
-                    <Button className="ml-2" color="success" type="submit" onClick={handleSubmit}>Save</Button>
-                    <Button className="ml-2" onClick={openEdit} >Back</Button>
-                </div>
-            </Row> */}
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalBody>
                     <Form>
